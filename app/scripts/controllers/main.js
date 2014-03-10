@@ -2,9 +2,21 @@
 
 angular.module('elvisApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+    var keys = {}
+    var latestAuction;
+
+    // Call eBay
+    function getEbayListing() {
+      //HTTP to eBay
+      latestAuction = {
+        "time": "now"
+      }
+    }
+    getEbayListing();
+
+
+    // Attach to scope
+    $scope.latestAuction = latestAuction;
+    console.log(latestAuction);
   });
